@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css"
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600&amp;display=swap">
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>React App</title>
+  </head>
+  <body id="main-content">
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <style>
+      * {
+          padding: 0;
+          margin: 0;
+          text-decoration: none;
+          box-sizing: border-box;
+          list-style: none;
+      }
+
+      div h1,
+      div h2,
+      div h3,
+      div h4,
+      div h5,
+      div h6 {
+          letter-spacing: normal;
+          padding: 0;
+          margin: 0;
+      }
+      @media screen and (max-width: 1150px){
+div.et_pb_row {
+  width: 100%!important;
+}
+      }
+div p{
+  padding: 0;
+}
+      html,
+      body {
+          overflow-x: hidden;
+          min-width: 750px;
+          font-family: Poppins;
+        font-weight:normal;
+      }
+input{
+  font-family: Poppins;
+}
+img, div, h1, h3, h4, h5, h6, p{
+  line-height: normal;
+}
+/* wpcss */
+.formbox .inputbox{
+  font-size: 14px;
+}
+.job_box .css-1wy0on6 :nth-child(2),
+.job_box .css-1wy0on6 :nth-child(3)
+{
+  display: none;
+}
+#main-content .formbox .css-26l3qy-menu .css-11unzgr>div{
+  padding: 0 0 0 10px;
+  font-size: 14px;
+  line-height: 42px;
+  height: 42px;
+  color: #000000;
+}
+#main-content .formbox .css-26l3qy-menu .css-gg45go-NoOptionsMessage,
+#main-content .formbox .css-26l3qy-menu .css-11unzgr .css-1gl4k7y{
+  color: #8F9397;
+  text-align: left;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 0 0 10px;
+}
+#main-content .formbox .css-26l3qy-menu .css-11unzgr .css-1gl4k7y .loadingtext{
+  text-align: center;
+  color: #8F9397;
+}
+#main-content .formbox .title{
+  position: relative;
+  margin-top: 21px;
+}
+#main-content .boolean_part .main .toptitle .ph1{
+  text-transform: capitalize;
+}
+/* wpcss */
+      /* part2 */
+      .part2{
+          width: 100%;
+      }
+      #main-content .part2 .title{
+          font-weight: bold;
+font-size: 36px;
+line-height: 54px;
+text-align: center;
+color: #000000;
+max-width: 600px;
+margin: 100px auto 24px;
+      }
+          #main-content .part2 .title2{
+          max-width: 1000px;
+          font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 27px;
+text-align: center;
+color: #000000;
+margin: 0 auto 80px;
+      }
+      #main-content .part2 .title2>a{
+          text-decoration: underline;
+          color: #4E8DF6;
+      }
+      .part2-2{
+          max-width: 900px;
+          display: flex;
+          justify-content: space-between;
+  
+          flex-wrap: wrap;
+          margin: 0 auto 142px;
+      }
+      .part2-2 .eachbox{
+          width: 49%;
+          background: #FFFFFF;
+border: 1px solid rgba(203, 203, 203, 0.5);
+box-sizing: border-box;
+box-shadow: 0px 100px 80px rgba(0, 0, 0, 0.07), 0px 41.7776px 33.4221px rgba(0, 0, 0, 0.0503198), 0px 22.3363px 17.869px rgba(0, 0, 0, 0.0417275), 0px 12.5216px 10.0172px rgba(0, 0, 0, 0.035), 0px 6.6501px 5.32008px rgba(0, 0, 0, 0.0282725), 0px 2.76726px 2.21381px rgba(0, 0, 0, 0.0196802);
+border-radius: 13px;
+padding: 40px 40px 60px;
+      }
+      .part2-2 .eachbox .icon{
+          width: 53px;
+  height: 60px;
+  background-image: url(https://staging-hiretualcom.kinsta.cloud/wp-content/uploads/2021/09/texticon.png?002);
+  background-repeat: no-repeat;
+  background-size: 497px auto;
+      }
+      .part2-2 .eachbox.box1 .icon{
+          background-position: -344px 0;
+      }
+      .part2-2 .eachbox.box2 .icon{
+          background-position: -349px -95px;
+      }
+      #main-content .part2-2 .eachbox .title{
+          font-style: normal;
+font-weight: bold;
+font-size: 18px;
+line-height: 27px;
+color: #000000;
+text-align: left;
+margin: 20px 0;
+      }
+      #main-content .part2-2 .eachbox .text{
+          font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 27px;
+color: #000000;
+      }
+      .text-img{
+          max-width: 1080px;
+          display: flex;
+          justify-content: space-between;
+          flex-wrap: wrap;
+          align-items: center;
+          margin: 0px auto 65px;
+      }
+      #main-content .text-img .text{
+          width: 45%;
+          max-width: 465px;
+          text-align: left;
+      }
+      #main-content .text-img .text .title{
+          text-transform: capitalize;
+          font-style: normal;
+font-weight: bold;
+font-size: 36px;
+line-height: 54px;
+color: #000000;
+text-align: left;
+      }
+      #main-content .text-img .text .text1{
+          font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 27px;
+color: #6F777B;
+position: relative;
+margin: 30px 0 16px;
+text-align: left;
+      }
+      #main-content .text-img .text .text2{
+          text-transform: capitalize;
+          padding-left: 20px;
+          margin: 0;
+      }
+      #main-content .text-img .text .text2::before{
+          content: ' ';
+          width: 13px;
+          height: 13px;
+          background: #4E8DF6;
+          border-radius: 50%;
+          position: absolute;
+          left: 0px;
+          top: 35px;
+      }
+      #main-content .text-img .img{
+          
+         max-width: 50%;
+      }
+      @media (max-width:980px) {
+          .part2-2 {
+  max-width: 900px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 0 auto 142px;
+}
+.part2-2 .eachbox{
+  margin-bottom: 50px;
+}
+.text-img {
+  flex-direction: column;
+}
+#main-content .text-img .text{
+  width: 100%;
+}
+#main-content .text-img .img{
+  width: 90%;
+  margin: 50px 0 0 0 !important;
+  order: 2;
+}
+      }
+      .part2-3 {
+overflow: hidden;
+background-color: #f5f8fc;
+}
+.part2-3 .content {
+width: 90%;
+margin: 0 auto;
+max-width: 1080px;
+position: relative;
+display: flex;
+justify-content: space-between;
+}
+.part2-3 .content::before {
+content: '';
+position: absolute;
+left: -134px;
+top: 76px;
+height: 223px ;
+width: 200px;
+background-image: url(https://staging-hiretualcom.kinsta.cloud/wp-content/uploads/2021/09/texticon.png);
+background-position: -30px -1px;
+}
+@media (max-width: 1350px) {
+.part2-3 .content::before {
+  left: -50px;
+}
+}
+.part2-3 .content .content-left {
+max-width: 530px;
+font-size: 50px;
+line-height: 1.5;
+color: #000;
+padding: 190px 0 180px;
+font-weight: 700;
+}
+.part2-3 .content .content-left div{
+  line-height: 1.5;
+}
+.part2-3 .content .content-left b {
+color: #4e8df6;
+}
+.part2-3 .content .content-left .content-text1 .one {
+position: relative;
+display: inline-block;
+}
+.part2-3 .content .content-left .content-text1 .one::before {
+content: '';
+position: absolute;
+width: 43px;
+height: 33px;
+background-image: url(https://staging-hiretualcom.kinsta.cloud/wp-content/uploads/2021/09/texticon.png);
+background-position: 42px 444px;
+top: -25px;
+left: 43px;
+}
+.part2-3 .content .content-left .content-text1 .jiangpai {
+padding-right: 50px;
+position: relative;
+display: inline-block;
+}
+.part2-3 .content .content-left .content-text1 .jiangpai::before {
+  position: absolute;
+  content: '';
+  width: 40px;
+  height: 50px;
+  background-image: url(https://staging-hiretualcom.kinsta.cloud/wp-content/uploads/2021/09/texticon.png);
+  background-position: 36px 250px;
+right: 0;
+top: calc(50% - 25px);
+}
+.part2-3 .content .content-left .content-text2 .company {
+text-decoration: underline 4px solid #000;
+padding-left: 64px;
+position: relative;
+display: inline-block;
+text-underline-position: from-font;
+}
+.part2-3 .content .content-left .content-text2 .company::before {
+content: '';
+position: absolute;
+width: 50px;
+height: 50px;
+left: 0;
+top: calc(50% - 25px);
+background-image: url(https://staging-hiretualcom.kinsta.cloud/wp-content/uploads/2021/09/texticon.png);
+background-position: 50px 328px;
+}
+.part2-3 .content .content-left .content-text2 .company::after {
+content: '';
+position: absolute;
+width: 43px;
+height: 32px;
+background-image: url(https://staging-hiretualcom.kinsta.cloud/wp-content/uploads/2021/09/texticon.png);
+background-position: 43px 385px;
+left: 55px;
+bottom: -30px;
+}
+.part2-3 .content .content-right .list {
+margin: 0;
+margin-right: -55px;
+padding: 140px 0 170px 87px;
+box-shadow: -17px 0px 52px -32px #9cbae080;
+list-style: none;
+}
+.part2-3 .content .content-right .list > li {
+font-size: 18px;
+font-weight: bold;
+color: #545659;
+line-height: 1.67;
+padding-left: 24px;
+position: relative;
+}
+.part2-3 .content .content-right .list > li::before {
+content: '';
+position: absolute;
+width: 5px;
+height: 5px;
+border-radius: 50%;
+background-color: #545659;
+left: 7.5px;
+top: calc(50% - 2.5px);
+}
+@media (max-width: 1350px) {
+.part2-3 .content .content-right .list {
+  padding-left: 60px;
+}
+}
+@media (max-width: 1240px) {
+.part2-3 .content .content-right .list {
+  margin-right: 0;
+  padding-left: 24px;
+}
+}
+@media (max-width: 980px) {
+.part2-3 .content {
+  flex-direction: column;
+  align-items: center;
+}
+.part2-3 .content::before {
+  left: 0;
+}
+.part2-3 .content .content-left {
+  padding: 120px 0 0;
+}
+.part2-3 .content .content-right {
+  width: 100%;
+}
+.part2-3 .content .content-right .list {
+  box-shadow: none;
+}
+}
+    /* partbottom */
+    .partbottom {
+          background-color: #4E8DF6;
+          display: flex;
+          justify-content: center;
+      }
+
+      .partbottom .cont {
+          max-width: 1240px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          width: 100%;
+          padding-left: 70px;
+
+      }
+
+      .partbottom .cont>div {
+          width: 45%;
+      }
+
+      .partbottom .cont div.right-box {
+          width: 63%;
+      }
+
+      .partbottom .cont .left-box {
+          display: flex;
+          margin: 35px 0;
+      }
+
+      .partbottom .cont .left-box .ellipse {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          width: 125px;
+          height: 160px;
+          background: rgba(118, 167, 255, 0.7);
+          box-shadow: 0px 100px 80px rgba(0, 0, 0, 0.07), 0px 41.7776px 33.4221px rgba(0, 0, 0, 0.0503198), 0px 22.3363px 17.869px rgba(0, 0, 0, 0.0417275), 0px 12.5216px 10.0172px rgba(0, 0, 0, 0.035), 0px 6.6501px 5.32008px rgba(0, 0, 0, 0.0282725), 0px 2.76726px 2.21381px rgba(0, 0, 0, 0.0196802);
+          border-radius: 200px;
+      }
+
+      .partbottom .cont .left-box .ellipse>img {
+          width: 100px;
+          height: 100px;
+          margin: 10px auto 8px;
+      }
+
+      .partbottom .cont .left-box .ellipse .name {
+          font-style: normal;
+          font-weight: bold;
+          font-size: 14px;
+          line-height: 21px;
+          color: #FFFFFF;
+      }
+
+      .partbottom .cont .left-box>.ellipse:first-child {
+          margin-top: 96px;
+      }
+
+      .partbottom .cont .left-box .e-box .ellipse:last-child {
+          margin-top: 33px;
+          margin-left: 3px;
+      }
+
+      .partbottom .cont .left-box .e-box .ellipse:last-child {
+          margin-top: 18px;
+          margin-left: 18px;
+      }
+
+      .partbottom .cont .left-box>.ellipse:last-child {
+          margin-top: 68px;
+          margin-left: 3px;
+      }
+
+      .partbottom .cont .right-box {
+          margin: 100px 0 87px;
+      }
+
+      .partbottom .cont .right-box .text {
+          font-style: normal;
+          font-weight: bold;
+          font-size: 36px;
+          line-height: 54px;
+          color: #FFFFFF;
+          margin-bottom: 60px;
+      }
+
+      .partbottom .cont .right-box .btn {
+          display: flex;
+      }
+
+      .partbottom .cont .right-box .btn1 {
+          width: 211px;
+          height: 53px;
+          display: block;
+          background: #E16427;
+          border-radius: 30px;
+          font-style: normal;
+          font-weight: bold;
+          font-size: 16px;
+          line-height: 24px;
+          text-align: center;
+          color: #FFFFFF;
+          border: 0;
+          text-decoration: none;
+          line-height: 53px;
+          margin : 0 auto;
+      }
+
+      @media (max-width:1200px) {
+          .partbottom .cont {
+              margin-right: 0;
+          }
+
+          .partbottom .cont div.right-box {
+              width: 90%;
+              margin: 35px auto;
+              text-align: center;
+          }
+
+          .partbottom .cont>div {
+              width: 45%;
+              margin-right: 3%;
+          }
+
+      }
+
+      @media (max-width:980px) {
+          .partbottom .cont {
+              flex-wrap: wrap;
+              justify-content: center;
+              margin-right: 0;
+          }
+
+          .partbottom .cont div.right-box {
+              margin: 35px auto;
+              text-align: center;
+          }
+
+          .partbottom .cont .left-box {
+              width: 425px;
+              margin-top: 50px;
+          }
+
+          .partbottom .cont .right-box .text {
+              text-align: center;
+          }
+
+      }
+  </style>
+    <div class="part2">
+      <p class="title">Kick-off Your Candidate Search with Boolean Strings</p>
+      <p class="title2">Hiretual lets you build boolean strings search in seconds and with our search enhancements you’ll find your ideal qualified candidates. <a href="https://chrome.google.com/webstore/detail/hiretual-10x-faster-talen/jeablngoapekimaeoeclgcefdcpjhjcg" target="_blank" data-vars-ga-category="Kick-off Your Candidate Search with Boolean Strings" data-vars-ga-action="click_download our free chrome extension" data-vars-ga-label='https://hiretual.com/features/boolean-builder/' rel="noopener">Download our free chrome extension</a>  to search on 25+ platforms with:
+      </p>
+      <div class="part2-2">
+          <div class="eachbox box1">
+              <div class="icon"></div>
+              <p class="title">JD mode</p>
+              <p class="text">Copy/paste a job description and Hiretual’s AI will extract and parse the relevant keywords for you to generate a Boolean string.</p>
+          </div>
+          <div class="eachbox box2">
+              <div class="icon"></div>
+              <p class="title">Quick mode</p>
+              <p class="text">Choose a job title or area of expertise and Hiretual’s AI will predict and generate your keywords. You also have an option for even more comprehensive searches that allow you to customize your string by adding other filters like mandatory skills, industries, and locations. </p>
+          </div>
+      </div>
+      <div class="text-img">
+          <div class="text">
+              <p class="title">Discover Hidden Profiles in your ATS with Boolean and AI</p>
+              <p class="text1">For hiring teams looking to fill open reqs, <strong>ATS’s contain a pool of past applicants</strong> that have shown prior interest in your organization and have upskilled since your last engagement touchpoint. </p>
+              <p class="text1 text2"><strong>+ Plus:<br>
+                  Using Hiretual you can plug in profile keywords or Boolean strings to search across your ATS candidate pool.</strong></p>
+          </div>
+          <img class="img" style="max-width: 472px;" src="https://staging-hiretualcom.kinsta.cloud/wp-content/uploads/2021/11/booleanimg2.png" alt="">
+      </div>
+      <div class="text-img">
+          <img class="img" style="margin-bottom: -260px;" src="https://staging-hiretualcom.kinsta.cloud/wp-content/uploads/2021/11/boolean001.png" alt="">
+          <div class="text">
+              <p class="title">Supplement Your Boolean Strings with Advanced AI Filters</p>
+              <p class="text1">Boolean Searches are a great first step to finding qualified candidates. Hiretual takes your search even further with advanced <strong>AI Filters that allow you to focus into the perfect candidate like Job title, Mandatory Skills, Preferred Skills, Locations, Years of experience, and Keywords.</strong></p>
+             
+          </div>
+         
+      </div>
+      <div class="part2-3">
+          <div class="content">
+              <div class="content-left">
+                  <div class="content-text1">And That’s Just <b class="one">One</b> of <b>Many</b> <span class="jiangpai">Awesome</span> <br> Features On the </div>
+                  <div class="content-text2"><span class="company">Hiretual</span> Platform.</div>
+              </div>
+              <div class="content-right">                
+                  <ul class="list">
+                      <li>Source from 45+ Open Web Platforms</li>
+                      <li>Contact Abundance & Accuracy</li>
+                      <li>GDPR Compliant</li>
+                      <li>Healthcare Specific AI Sourcing</li>
+                      <li>Tech Specific AI Sourcing</li>
+                      <li>Diversity Filters and Insights</li>
+                      <li>Screening & Ranking of ATS Candidates</li>
+                      <li>Candidate Engagement</li>
+                      <li>Email Sequences</li>
+                      <li>Comprehensive Tracking</li>
+                      <li>Market Insights</li>
+                      <li>ATS/CRM Integrations</li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="partbottom">
+    <div class="cont">
+      <div class="left-box box">
+        <div class="ellipse">
+            <img src="https://staging-hiretualcom.kinsta.cloud/wp-content/uploads/2021/06/peo4.png" alt="Portrait of a girl" class="photo">
+            <div class="name">Healthcare</div>
+        </div>
+        <div class="e-box">
+            <div class="ellipse">
+                <img src="https://staging-hiretualcom.kinsta.cloud/wp-content/uploads/2021/06/Diversity.png" alt="Portrait of a girl" class="photo">
+                <div class="name">Diversity</div>
+            </div>
+            <div class="ellipse">
+                <img src="https://staging-hiretualcom.kinsta.cloud/wp-content/uploads/2021/06/newScholar.png" alt="Portrait of a man" class="photo">
+                <div class="name">Scholar</div>
+            </div>
+        </div>
+        <div class="ellipse">
+            <img src="https://staging-hiretualcom.kinsta.cloud/wp-content/uploads/2021/06/Tech.png" alt="Portrait of a man" class="photo">
+            <div class="name">Tech</div>
+        </div>
+    </div>
+        <div class="right-box box">
+            <div class="text">Experience The #1 Sourcing Solution.</div>
+            <a class="btn1" data-vars-ga-category="Experience The #1 Sourcing Solution" data-vars-ga-action="click_get started now" data-vars-ga-label='https://hiretual.com/features/boolean-builder/' href="https://explore.hiretual.com/contact-sales" target="_blank" rel="noopener">Get Started Now</a>
+        </div>
+    </div>
+</div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  </body>
+</html>

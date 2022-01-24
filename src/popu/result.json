@@ -1,0 +1,45 @@
+[
+    {
+        "id": "R1", "content1": { "h1": "Thanks for taking our questionnaire!", "h3": "We believe that the perfect plan for you is our ", "h3span": "HireEZ Enterprise!", "btn": "CONTACT SALES", "url": "https://explore.hireez.com/contact-sales", "imgurl": "https://hireez.com/wp-content/uploads/2021/11/by-company-top-1.png", "h5": "Ideal for users who are interested in AI Sourcing and direct engagement capabilities within HireEZ" },
+        "content2": {
+            "text1": "To get a price estimate for HireEZ Enterprise, please contact our Sales team ", "box_title": "Top features:", "ul": [
+                { "lispan": "DE&I Power Filters", "questtext": "HireEZ powerful Diversity, Equity, and Inclusion (DE&I) AI filters help you specify searches for women, veterans, African-Americans, Hispanics, and Native Americans." },
+                { "lispan": "Talent market insights", "questtext": "Provide real-time candidate data to support current or future hiring strategies. Build informed and holistic searches with our powerful AI filters to narrow down in industries, job titles, companies, diversity, and more." },
+                { "lispan": "Team collaboration", "questtext": "" },
+                { "lispan": "Direct Account Manager and Customer Support Manager Oversight", "questtext": "" },
+                { "lispan": "ATS Integrations (1-way)", "questtext": "" },
+                { "lispan": "Add On: <a href='https://hireez.com/features/talent-data-cloud/' target='qbank' rel='noopener'>Talent Data Cloud</a> (Refresh, Deduplicate, Enrich Candidate Data)", "questtext": "" }
+            ], "box_bottom": "Help Enterprise Companies LIKE", "lunbo_img": ["https://hireez.com/wp-content/uploads/2021/11/homepage-company2.png", "https://hireez.com/wp-content/uploads/2021/11/homepage-company3.png"]
+        }
+        , "btn2": { "text": "CONTACT SALES", "url": "https://explore.hireez.com/contact-sales" },
+        "help": "More Questions? Let us help"
+    },
+    {
+        "id": "R3", "content1": { "h1": "Thanks for taking our questionnaire!", "h3": "We believe that the perfect plan for you is our ", "h3span": "HireHireEZtual Standard!", "btn": "Start 7-Day Free Trial", "url": "https://app.hiretual.com/signup/standard", "imgurl": "https://hireez.com/wp-content/uploads/2021/11/enterprise-top-1.png", "h5": " For individual recruiters who need to source and outreach for a season." },
+        "content2": {
+            "text1": "<span>You can either contact our support team directly to learn more about this plan or <a target='blank' href='https://app.hiretual.com/signup/standard'>start a free 7-day trial</a> here.</span>", "buyit": [{ "explain_a": "$49 USD", "explain_text": "per month, when billed yearly" }, { "explain_a": "$79 USD", "explain_text": "per month, when billed monthly" }], "box_title": "Top features:", "ul": [
+                { "lispan": "AI Sourcing with 70 candidates per search", "questtext": "" },
+                { "lispan": "1200 contact credits per year", "questtext": "" },
+                { "lispan": "1200 profile exports per year", "questtext": "" },
+                { "lispan": "Bulk email outreach", "questtext": "" }
+            ], "box_bottom": "Help Enterprise Companies LIKE", "lunbo_img": ["https://hireez.com/wp-content/uploads/2021/11/homepage-company5.png"]
+        }
+        , "btn2": { "text": "Start 7-Day Free Trial", "url": "https://app.hiretual.com/signup/standard" },
+        "help": "More Questions? Let us help. Contact us via support@hiretual.com"
+    },
+    {
+        "id": "R2", "content1": { "h1": "Thanks for taking our questionnaire!", "h3": "We believe that the perfect plan for you is our ", "h3span": "HireEZ Professional !", "btn": "Start 7-Day Free Trial", "url": "https://app.hiretual.com/signup/professional", "imgurl": "https://hireez.com/wp-content/uploads/2021/11/img2-1.png", "h5": "For individual recruiters that need volume sourcing and engagement." },
+        "content2": {
+            "text1": "<span>You can either contact our support team directly to learn more about this plan or <a target='blank' href='https://app.hiretual.com/signup/professional'>start a free 7-day trial</a> here.</span>", "buyit": [{ "explain_a": "$149 USD", "explain_text": "per month, when billed yearly" }, { "explain_a": "$199 USD", "explain_text": "per month, when billed monthly" }], "box_title": "Top features:", "ul": [
+                { "lispan": "AI sourcing with unlimited search", "questtext": "" },
+                { "lispan": "2400 contact credits per year", "questtext": "" },
+                { "lispan": "2400 profile exports per year", "questtext": "" },
+                { "lispan": "Bulk email outreach", "questtext": "" },
+                { "lispan": "Automated email campaign", "questtext": "" },
+                { "lispan": "Performance reports", "questtext": "" }
+            ], "box_bottom": "Help Enterprise Companies LIKE", "lunbo_img": ["https://hireez.com/wp-content/uploads/2021/11/homepage-company1.png"]
+        }
+        , "btn2": { "text": "Start 7-Day Free Trial", "url": "https://app.hiretual.com/signup/professional" },
+        "help": "More Questions? Let us help. Contact us via support@hiretual.com"
+    }
+]

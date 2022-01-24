@@ -1,0 +1,563 @@
+
+.css-1okebmr-indicatorSeparator{
+    display: none;
+}
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+div h1,
+div h2,
+div h3,
+div h4,
+div h5,
+div h6 {
+    letter-spacing: normal;
+    padding: 0;
+    margin: 0;
+}
+@media screen and (max-width: 1150px){
+div.et_pb_row {
+width: 100%!important;
+}
+}
+div p{
+padding: 0;
+}
+html,
+body {
+    padding: 0 !important;
+    min-width: 750px;
+}
+input{
+font-family: Manrope;
+}
+
+
+button {
+    background: none;
+    cursor: pointer;
+}
+
+.but {
+    display: block;
+    width: 264px;
+    height: 52px;
+    line-height: 52px;
+    background-color: #FFC021;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 16px;
+    color: #000;
+    text-align: center;
+    margin: 0 auto;
+}
+
+
+.reset {
+    width: 79px;
+    height: 46px;
+    background-image: url(https://hireez.com/wp-content/uploads/2022/01/rest.png);
+    background-position: right center;
+    background-size: 14px auto;
+    background-repeat: no-repeat;
+    padding-right: 21px;
+   
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 46px;
+    text-align: center;
+    color: #2764FC;
+    border: none;
+}
+.iconbg{
+    display: inline-block;
+    background-image: url(https://hireez.com/wp-content/uploads/2021/12/texticon.png);
+background-repeat: no-repeat;
+background-size: 497px auto;
+}
+.boolean_part {
+   
+    width: 100%;
+    background: #F5F8FC;
+    padding: 60px 0 0px;
+}
+
+.boolean_part .main {
+    max-width: 1080px;
+    width: 96%;
+    margin: 0 auto;
+}
+
+.boolean_part .main .toptitle {
+    text-align: center;
+}
+
+#main-content .boolean_part .main .toptitle .ph1 {
+    font-family: Proxima nova!important;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 54px;
+    color: #000000;
+    margin: 17px auto 45px;
+}
+
+.outbox{
+    margin-bottom: 12px;
+}
+#main-content .formbox .titlebox{
+    position: relative;
+}
+#main-content .formbox .title_p1{
+     font-family: Proxima nova!important;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 46px;
+    text-align: left;
+    color: #000000;
+    margin: 0 0 4px 0;
+}
+#main-content .formbox .title_p1.w_nomore{
+    font-weight: 400;
+}
+#main-content .formbox .title_p2{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 46px;
+    text-align: left;
+    color: #545659;
+    margin: 4px 0;
+}
+.formbox .errtip{
+    color:#E85741;
+    font-size: 14px;
+    line-height: 36px;
+    text-align: left;
+}
+.formbox .titlebox .reset {
+    position: absolute;
+    right: 15px;
+    top: 0px;
+}
+
+.waring {
+    position: absolute;
+    font-size: 16px;
+    line-height: 46px;
+    text-align: center;
+    color: #EB5757;
+    right: 0;
+    top: 0px;
+}
+.job_box .waring{
+    right: 100px;
+}
+.waring>.icon{
+    width: 14px;
+    
+}
+
+#main-content .formbox .grayT {
+    color: #8F9397;
+}
+.formbox .inputbox{
+    position: relative;
+    width: 100%;
+   
+min-height: 40px;
+background: #FFFFFF;
+border-radius: 5px;
+}
+.formbox .css-1s2u09g-control{
+    border: none;
+}
+.formbox .css-1pahdxg-control{
+    border: none;
+    box-shadow: none;
+}
+.formbox .css-1pahdxg-control:hover{
+    border: none;
+}
+
+
+.formbox .inputbox input{
+    border: none;
+    outline: none;
+    font-size: 14px;
+line-height: 28px;
+color: #000000;
+    height: 28px;
+    padding: 0;
+}
+.strlen{
+    font-size: 14px;
+line-height: 28px;
+display: none;
+}
+.formbox .inputbox .oinput::placeholder{
+font-size: 14px;
+line-height: 28;
+color: #8F9397;
+}
+.job_box .css-1hb7zxy-IndicatorsContainer :nth-child(2),
+.job_box .css-1hb7zxy-IndicatorsContainer :nth-child(3){
+    display: none;
+}
+.formbox .inputbox .css-1rhbuit-multiValue{
+    vertical-align: top;
+    height: 28px;
+    width: auto;
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+}
+
+.formbox .inputbox .css-1rhbuit-multiValue .css-12jo7m5{
+    text-transform: capitalize;
+    display: inline-block;
+    padding: 0 8px;
+    font-style: normal;
+font-weight: normal;
+    font-size: 14px;
+line-height: 28px;
+height: 28px;
+color: #2F2F30;
+background: rgba(78, 141, 246, 0.2);
+border-radius: 5px 0 0 5px;
+margin-right: 1px;
+}
+.formbox .inputbox .css-1rhbuit-multiValue .css-xb97g8{
+    display: inline-block;
+    width: 28px;
+height: 28px;
+background-color: rgba(78, 141, 246, 0.2);
+background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAACvSURBVHgBhdLBDYMwDAVQ24g9WKWT9NwjG8AEXKr20l26SvZAuPWvQHITk1jiENsPghO+P15X0m1aV72M4y1RJZblOfS9vEm6SdTQh+iXQKGF0Asjm33JFqmGPUIvDB+Fzgq2GOxJftsRQo39W3OMfISQ53xLHiMXoQLmeIcFQggFIa2GaKv+n/aGYmB/MJoe8mfT5jPkjyPCXEPRwA4sLYRALr9hdld1rqEIM+v8BbLIzwAXjGqJAAAAAElFTkSuQmCC);
+background-repeat: no-repeat;
+background-size: 14px auto;
+background-position: center center;
+border-radius: 0px 5px 5px 0px;
+cursor: pointer;
+}
+.formbox .inputbox .formbox .css-1s2u09g-control{
+    border: none;
+    font-size: 14px;
+    line-height: 46px;
+    color: #8F9397;
+}
+.formbox .inputbox .css-1rhbuit-multiValue .css-xb97g8>svg{
+    opacity: 0;
+}
+/* 关键词数据 */
+.formbox .data_box{
+    position: relative;
+    width: 100%;
+}
+/* 系统匹配关键词 */
+.formbox .data_box .systemkeyword_box{
+    /* display: none; */
+    z-index: 1;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding: 8px 0px 0px 10px;
+}
+.formbox .data_box .systemkeyword_box>li{
+    text-transform: capitalize;
+    display: inline-block;
+    width: auto;
+height: 28px;
+border-radius: 5px;
+font-weight: normal;
+font-size: 14px;
+line-height: 28px;
+padding: 0 8px;
+cursor: pointer;
+color: #2764FC;
+transition: background-color 0.1s;
+margin: 0 0 9px 0;
+}
+.formbox .data_box .systemkeyword_box>li:hover{
+    background: #2764FC;
+    color: #FFFFFF;
+}
+
+/* 系统推荐关键词 */
+.formbox .data_box .recommendkeyword_box{
+    /* display: none; */
+    position: absolute;
+    top: 0px;
+    left: 0;
+    width: 100%;
+    margin-top: 6px;
+    background: #FFFFFF;
+box-shadow: 0px 22.3363px 17.869px rgba(0, 0, 0, 0.0417275), 0px 12.5216px 10.0172px rgba(0, 0, 0, 0.035), 0px 6.6501px 5.32008px rgba(0, 0, 0, 0.0282725), 0px 2.76726px 2.21381px rgba(0, 0, 0, 0.0196802);
+border-radius: 0 0 5px 5px;
+z-index: 2;
+max-height: 450px;
+overflow-y: auto;
+}
+
+
+.formbox .data_box .recommendkeyword_box>li{
+    width: 100%;
+    font-size: 14px;
+line-height: 42px;
+padding: 0 12px;
+color: #000000;
+transition: background-color 0.2s;
+cursor: pointer;
+}
+.formbox .data_box .recommendkeyword_box>li:hover{
+    background: rgba(78, 141, 246, 0.2);
+}
+/* type to search */
+.formbox .css-26l3qy-menu{
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 40px;
+    color: #000000;
+    text-align: left;
+    box-shadow: none;
+    margin-top: 4px;
+}
+.formbox .css-26l3qy-menu .css-4ljt47-MenuList{
+    padding: 0;
+}
+.css-4ljt47-MenuList>div{
+padding: 1px 0 1px 10px;
+}
+.css-4ljt47-MenuList::-webkit-scrollbar,
+#main-content .formbox .css-26l3qy-menu .css-11unzgr::-webkit-scrollbar
+ {
+    width: 6px;
+    /*滚动条的尺寸*/
+}
+.css-4ljt47-MenuList::-webkit-scrollbar-thumb,
+#main-content .formbox .css-26l3qy-menu .css-11unzgr::-webkit-scrollbar-thumb
+{
+    border-radius: 5px;
+    background: #B1B2B5;
+}
+
+#main-content .formbox .css-11unzgr{
+    padding: 0;
+}
+#main-content .formbox .css-26l3qy-menu .css-gg45go-NoOptionsMessage,#main-content .formbox .css-26l3qy-menu .css-1gl4k7y{
+    color: #8F9397;
+    text-align: left;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 0 0 10px;
+}
+#main-content .formbox .css-26l3qy-menu .css-1n7v3ny-option{
+    background: rgba(78, 141, 246, 0.2);
+}
+#main-content .formbox .css-26l3qy-menu .css-1tfbn7p-LoadingMesage,#main-content .formbox .css-26l3qy-menu .loadingtext{
+    text-align: center;
+    color: #8F9397;
+    height: 40px;
+    line-height: 40px;
+} 
+
+
+
+.boolean_part .but{
+    margin: 66px auto 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor:pointer;
+}
+.boolean_part .but.disable{
+    background: #BDBDBD;
+    color: #ffffff;
+    pointer-events: none;
+    
+}
+
+.boolean_part .but .icon{
+    width: 25px;
+    margin-left: 10px;
+    /* display: none; */
+}
+.showboolean_box{
+    width: 100%;
+    text-align: right;
+    /* display: none; */
+}
+.textareodiv{
+    text-align: right;
+}
+
+.booleantext{
+    padding: 10px;
+    width: 100%;
+    margin: 0px;
+font-size: 14px;
+line-height: 21px;
+color: #8F9397;
+resize: none;
+border: none;
+outline: none;
+margin: 0 0 10px 0;
+}
+
+.booleantext::selection {
+background-color: #cce2ff;
+color: rgba(0,0,0,.87);
+}
+.copybut{
+    display: inline-block;
+    width: 79px;
+height: 46px;
+background-image: url(https://hireez.com/wp-content/uploads/2022/01/copynew.png);
+background-position: left 16px;
+background-size: 16px auto;
+background-repeat: no-repeat;
+padding-left: 21px;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 46px;
+text-align: center;
+color: #2764FC;
+border: none;
+}
+
+
+.boolean_part .main-2{
+    text-align: center;
+}
+#main-content .boolean_part .main-2 .title{
+    font-weight: bold;
+font-size: 36px;
+line-height: 54px;
+color: #000000;
+}
+.boolean_part .main-2>img.icon{
+    margin: 15px auto 35px;
+}
+#main-content .boolean_part .main-2 .text{
+    margin: 0 auto ;
+    max-width: 630px;
+    font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 27px;
+text-align: center;
+color: #000000;
+}
+/* copy tip */
+.copytip{
+    width: 302px;
+    height: 56px;
+    position:fixed;
+    font-weight: normal;
+font-size: 12px;
+line-height: 16px;
+color: #2F2F30;
+background: #FFFFFF;
+box-shadow: 0px 1px 18px rgba(0, 0, 0, 0.08);
+border-radius: 6px;
+padding: 17px 0px 15px 15px;
+left: 50%;
+transform: translateX(-151px);
+top: 220px;
+z-index: 5;
+/* display: none; */
+animation: copytip 0.8s ease-out 1;
+}
+@keyframes copytip {
+    0%{
+        left: 100%;
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+        left: 50%;
+    }
+}  
+.copy_popupbox .copytip{
+    position: relative;
+    top: 190px;
+}
+.copytip .icon{
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    background-image: url(https://hireez.com/wp-content/uploads/2021/12/texticon.png?002);
+background-repeat: no-repeat;
+background-size: 497px auto;
+background-position: 0 -259px;
+margin: 0 5px -9px 0;
+}
+.copytip .close{
+    width: 8px;
+    height: 8px;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAACvSURBVHgBhdLBDYMwDAVQ24g9WKWT9NwjG8AEXKr20l26SvZAuPWvQHITk1jiENsPghO+P15X0m1aV72M4y1RJZblOfS9vEm6SdTQh+iXQKGF0Asjm33JFqmGPUIvDB+Fzgq2GOxJftsRQo39W3OMfISQ53xLHiMXoQLmeIcFQggFIa2GaKv+n/aGYmB/MJoe8mfT5jPkjyPCXEPRwA4sLYRALr9hdld1rqEIM+v8BbLIzwAXjGqJAAAAAElFTkSuQmCC);
+background-repeat: no-repeat;
+background-size: 8px auto;
+background-position: center center;
+margin: 3px 5px 0px 9px;
+border: none;
+float: right;
+margin: 9px 10px 0 0;
+}
+.copytip .close>span{
+    display: none;
+}
+/* err tip */
+div .apierrtip{
+    width: 302px;
+  min-height: 65px;
+    position:fixed;
+    font-weight: normal;
+font-size: 12px;
+line-height: 16px;
+color: #2F2F30;
+background: #ffffff;
+border-left: 10px solid #d46c55;
+box-shadow: 0px 1px 18px rgba(0, 0, 0, 0.08);
+border-radius: 6px;
+padding: 17px 0px 15px 40px;
+right: 10px;
+top: 150px;
+z-index: 1000;
+/* display: none; */
+}
+.apierrtip .icon{
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-image: url(https://hireez.com/wp-content/uploads/2021/12/errtip.png);
+background-repeat: no-repeat;
+background-size: 25px auto;
+background-position: center center;
+position: absolute;
+top: 50%;
+left: 5px;
+margin-top: -13px;
+}
+.apierrtip .close{
+    width: 10px;
+    height: 10px;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAACvSURBVHgBhdLBDYMwDAVQ24g9WKWT9NwjG8AEXKr20l26SvZAuPWvQHITk1jiENsPghO+P15X0m1aV72M4y1RJZblOfS9vEm6SdTQh+iXQKGF0Asjm33JFqmGPUIvDB+Fzgq2GOxJftsRQo39W3OMfISQ53xLHiMXoQLmeIcFQggFIa2GaKv+n/aGYmB/MJoe8mfT5jPkjyPCXEPRwA4sLYRALr9hdld1rqEIM+v8BbLIzwAXjGqJAAAAAElFTkSuQmCC);
+background-repeat: no-repeat;
+background-size: 10px auto;
+background-position: center center;
+border: none;
+position: absolute;
+top: 50%;
+right: 15px;
+margin-top:-5px
+}
+.apierrtip .close>span{
+    display: none;
+}

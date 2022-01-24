@@ -1,0 +1,14 @@
+[
+    { "id": "A1", "qu": "1.What is more important to you ?", "an": [{ "Options": "A. Sourcing candidates faster", "goid": "B1" }, { "Options": "B. Finding contact information", "goid": "B2" }] },
+    { "id": "B1", "qu": "2.Are you interested in Advance Sourcing <br/> (DE&I, Healthcare，Tech，Security Clearance)", "an": [{ "Options": "A. Yes", "goid": "C1" }, { "Options": "B. No", "goid": "C2" }, { "Options": "C. I'm not sure ?", "goid": "C3" }] },
+    { "id": "B2", "qu": "2.Would you like to engage candidates within Hiretual ?", "an": [{ "Options": "A. Yes", "goid": "C4" }, { "Options": "B. No, I'll do most of my engagement within my ATS/CRM", "goid": "R3" }] },
+    { "id": "C1", "qu": "3.Will multiple users from your team be using Hiretual ?", "an": [{ "Options": "A. Yes", "goid": "R1" }, { "Options": "B. Nope, just me", "goid": "R1" }] },
+    { "id": "C2", "qu": "3.Would you like to engage with candidates within Hiretual ?", "an": [{ "Options": "A. Yes", "goid": "R2" }, { "Options": "B. No, I'll do most of my engagement within my ATS/CRM", "goid": "R3" }] },
+    { "id": "C3", "qu": "3.Would you like to engage with candidates within Hiretual ?", "an": [{ "Options": "A. Yes", "goid": "D2" }, { "Options": "B. Does not matter", "goid": "R2" }] },
+    { "id": "C4", "qu": "3.Would you like to set up nurture email sequences ?", "an": [{ "Options": "A. Yes, bring on the automation !", "goid": "D1" }, { "Options": "B. Does not matter", "goid": "R2" }] },
+    { "id": "D1", "qu": "4.Will multiple users on your team be using Hiretual ?", "an": [{ "Options": "A. Yes", "goid": "R1" }, { "Options": "B. Nope, just me", "goid": "R1" }] },
+    { "id": "D2", "qu": "4.Would you like to set nurture sequences with Hiretual?", "an": [{ "Options": "A. Yes, bring on the automation!", "goid": "E1" }, { "Options": "B. Doesn’t matter", "goid": "R2" }] },
+    { "id": "E1", "qu": "5.Will multiple users on your team be using Hiretual ?", "an": [{ "Options": "A. Yes", "goid": "R1" }, { "Options": "B. Nope, just me", "goid": "R1" }] }
+
+]
+
