@@ -436,20 +436,6 @@
   }
   
   
- 
-  
-
-  
-  
-
-  
-  
-  
-  
-
-body{
-  font-family: Poppins;
-}
   .pagezz{
     /* display: none; */
     position: fixed;
@@ -705,7 +691,7 @@ box-sizing: border-box;
 margin: 0 auto;
 right: 0;
  
-      width: 180px;
+      width: 190px;
       height: 180px;
       top: calc(50% - 90px);
 max-width: 1064px;
@@ -768,9 +754,9 @@ height: 71px;
 font-style: normal !important;
 font-weight: 500 !important;
 font-size: 12px !important;
-max-width: 63px;
+max-width: 79px;
 line-height: 18px !important;
-margin-left: 10px;
+margin-left: 5px;
 color: #FFFFFF !important;
 }
 
@@ -780,7 +766,7 @@ color: #FFFFFF !important;
 max-width: 1080px;
 margin: 60px auto 0;
 width: 90%;
-padding: 37px 0 43px ;
+padding: 37px 0 97px ;
 position: relative;
 text-align: center;
 background: #FFFFFF;
@@ -817,6 +803,11 @@ border-radius: 20px;
 overflow: hidden;
 padding: 0;
 }
+
+.part6 .vjs-control-bar :after, .part6 .vjs-control-bar :before {
+  font-family: VideoJS;
+}
+
 .part6 .box video {
 
 width: 100%;

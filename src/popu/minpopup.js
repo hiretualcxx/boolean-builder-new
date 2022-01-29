@@ -14,8 +14,7 @@ const Minpopup = (props) => {
                 <div onClick={toggvideo} className="narrow_text-img">
                     <img src="https://hireez.com/wp-content/uploads/2021/12/minimg.png" alt="" />
                     <p>
-                        Start your
-                        free trials
+                    How Does hireEZ Work?
                     </p>
                 </div>
             </div>

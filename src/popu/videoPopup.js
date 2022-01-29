@@ -6,7 +6,6 @@ const VideoPopup = (props) => {
   const {
     nestedModal,
     toggvideo,
-    openMaskLayer,
   } = props;
   const [playstate, setPlaystate] = useState(false);
   const [videostate, setVideostate] = useState(true);
@@ -17,7 +16,7 @@ const VideoPopup = (props) => {
     responsive: true,
     fluid: true,
     sources: [{
-      src: 'https://HireEZ.com/wp-content/uploads/2021/12/new_video.mp4',
+      src: 'https://hireEZ.com/wp-content/uploads/2021/12/new_video.mp4',
       type: 'video/mp4'
     }]
   }
@@ -60,7 +59,7 @@ const VideoPopup = (props) => {
           <div className="roundiv"></div>
           <div className="roundiv"></div>
         </div>
-        <h2 className="part-title xuxu active">How Does HireEZ Work?</h2>
+        <h2 className="part-title xuxu active">How Does hireEZ Work?</h2>
         <div className="box xuxu active">
           {<VideoJS options={videoJsOptions} videostate={videostate} onReady={handlePlayerReady} />}
           <button onClick={startPlay} style={ { display: videostate ?'block': 'none' } } className="control1">
@@ -91,19 +90,12 @@ const VideoPopup = (props) => {
             <div className="advantage advantage4">
               <img alt="Portrait of a girl"  className=" ls-is-cached " src="https://hireez.com/wp-content/uploads/2021/11/newHealthcare-2X.png" />
               <div className="text">Powerful<br /> integrations with your favorite tools</div>
-              <div className="text2">HireEZ is the top AI sourcing vendor in the world</div>
+              <div className="text2">hireEZ is the top AI sourcing vendor in the world</div>
             </div>
           </div>
           
         </div>
-        <div className="surveydiv">
-          <img src="https://hireez.com/wp-content/uploads/2021/12/👆.png" alt="" />
-          <p>
-            TAKE OUR <a onClick={openMaskLayer}> 2-MINS SURVEY,</a></p><p>
-            AND FIND OUT WHICH PLAN IS  <a onClick={openMaskLayer} > BEST FOR YOUR NEEDS  <img src="https://hireez.com/wp-content/uploads/2021/12/Arrow-26.png" alt="" /></a>
-          </p>
-        </div>
-        <a className="btn1 xuxu active" onClick={openMaskLayer}>Start Survey</a>
+        
       </div>
     </Modal>
   )
