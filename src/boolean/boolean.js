@@ -115,7 +115,7 @@ function Boolean() {
     if(window.location.host == 'hireez.com'){
       api_key = '58394f1d06702804b69203c46ca1e8b1';
       api_secret = 'b979c3878f9bbefad7612dde699dca20';
-      basehost = 'https://api.hireez.com';
+      basehost = 'https://api.hiretual.com';
     }
  
     const timestamp = new Date().toISOString();
