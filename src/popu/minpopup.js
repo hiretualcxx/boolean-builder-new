@@ -9,12 +9,12 @@ const Minpopup = (props) => {
 
     return (
         
-            <div className={isclose?"narrow-box narrow-box2":"narrow-box "} >
+            <div className={isclose ? "narrow-box narrow-box2":"narrow-box "} >
                 <button onClick={closemin} className="box-close">&times;</button>
                 <div onClick={toggvideo} className="narrow_text-img">
                     <img src="https://hireez.com/wp-content/uploads/2021/12/minimg.png" alt="" />
                     <p>
-                    How Does hireEZ Work?
+                    Outbound Recruiting Made Easy
                     </p>
                 </div>
             </div>

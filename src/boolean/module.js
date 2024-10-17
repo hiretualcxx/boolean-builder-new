@@ -1,4 +1,5 @@
 
+import Select, { components, DropdownIndicatorProps } from 'react-select';
 var pageurl = window.location.href;
 
 function Restbutton(params) {
@@ -40,11 +41,52 @@ function Textarea(params) {
     )
 }
 
+var selectStyle = {
+    control: (baseStyles, state) => ({
+      ...baseStyles,
+      height:'62px',
+      borderRadius: '8px'
+    }),
+    option: (base) => ({
+      ...base,
+      height: '62px',
+    }),
+  }
+var AsyncSelectComponents = {
+    
+        DropdownIndicator:(props) => {
+        return (
+          <components.DropdownIndicator {...props}>
+            <div class="triangle"></div>
+          </components.DropdownIndicator>
+        );
+      },
+      IndicatorSeparator:(innerProps) => {
+        return '';
+      }
+    
+}
+
+function searchTip(){
+    return (
+        <div className='searchTip'>Type to search</div>
+    )
+}
+function LoadingEle(){
+    return (
+        <div className='searchTip'>Loading...</div>
+    )
+}
+
 var Selfmodule = {
     Restbutton,
     Recommendlab,
     Textarea,
     Errtip,
-    Waringtext
+    Waringtext,
+    selectStyle,
+    searchTip,
+    AsyncSelectComponents,
+    LoadingEle
 }
 export default Selfmodule;

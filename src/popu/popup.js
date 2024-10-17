@@ -1,18 +1,23 @@
 import React, { useEffect, useState } from 'react';
-import './popu.css'
 import VideoPopup from "./videoPopup"
 import Minpopup from "./minpopup"
 const ModalExample = (props) => {
     const{modal}=props;
     const [nestedModal, setNestedModal] = useState(false);
-
+    const [videostate, setVideostate] = useState(true);
 
     const [isclose,setIsclose]=useState(false)
 
+    const startPlay = () => {
 
+        setVideostate(false)
+      }
 
     const toggvideo = () => {
         setNestedModal(!nestedModal);
+        if(nestedModal){//close
+            document.getElementById("hiretual-nav").style.display = 'block'
+        }
     }
     const closemin = () => {
         setIsclose(!isclose);
@@ -20,8 +25,8 @@ const ModalExample = (props) => {
    
     return (
         <div className="pagezz" style={{display: modal ?  'block' :'none'} } >
-            <Minpopup   modal={modal} closemin={closemin} isclose={isclose} toggvideo={toggvideo} />
-            <VideoPopup toggvideo={toggvideo}  nestedModal={nestedModal} />
+            <Minpopup   modal={true} closemin={closemin} isclose={isclose} toggvideo={toggvideo} />
+            <VideoPopup toggvideo={toggvideo} startPlay={startPlay} videostate={videostate} nestedModal={nestedModal} />
           
         </div>
     );

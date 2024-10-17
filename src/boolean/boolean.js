@@ -2,6 +2,7 @@ import React, { useState, useRef } from 'react';
 import axios from 'axios';
 import './Demo.css';
 import AsyncSelect from 'react-select/async';
+
 import copy from 'copy-to-clipboard';
 import Selfmodule from './module';
 import  ModalExample from '../popu/popup';
@@ -13,6 +14,10 @@ const {
   Textarea,
   Restbutton,
   Waringtext,
+  AsyncSelectComponents,
+  selectStyle,
+  searchTip,
+  LoadingEle,
 } = Selfmodule;
 
 var pageurl = window.location.href;
@@ -48,17 +53,35 @@ function Boolean() {
   const [skill_orval, setskill_orval] = useState([]);
   const [skill_notval, setskill_notval] = useState([]);
   const [locationval, setlocationval] = useState([]);
+  
   const [booleanstr, setbooleanstr] = useState(null);
   const [waring, setwaring] = useState('');
   const [butstate, setbutstate] = useState('disable');
   const [modal, setModal] = useState(false);
   const [errtip, seterrtip] = useState({text: <div>Something wrong happened,<br/> please try again.</div>,visible:false});
+  const [successTip, setSuccessTip] = useState({text: 'success',visible:false});
+  const recordTimeOut = useRef() 
+
 
   public_data.current.setjobval = setjobval;
   public_data.current.setskill_andval = setskill_andval;
   public_data.current.setskill_orval = setskill_orval;
   public_data.current.setskill_notval = setskill_notval;
   public_data.current.setlocationval = setlocationval;
+
+  const successTipFn = (text='Successful')=>{
+    setSuccessTip({text:text,visible:true})
+    recordTimeOut.current = setTimeout(()=>{
+      closeSuccessTip()
+    },2000)
+  }
+  
+ const closeSuccessTip = ()=>{
+    if(recordTimeOut.current) {
+      clearTimeout(recordTimeOut.current)
+    }
+    setSuccessTip({text:"", visible:false})
+  }
 
   const rest = (e) => {
     let control = e.target.getAttribute('control');
@@ -86,6 +109,7 @@ function Boolean() {
       setbooleanstr(null);
       setwaring('')
       setbutstate('disable');
+      successTipFn('Reset Successfully')
     if(control == 'toTop'){
       window.scrollTo({
         left: 0,
@@ -106,33 +130,58 @@ function Boolean() {
     let api_key = '2f1d4a75319950bcccf921e46e8fd71bb1d9459b';
     let api_secret = 'b4e868af88324510c722714d5f216bb531b70411';
     let basehost = '';
-    basehost = 'https://api.testhtm.com'
+    // basehost = 'https://api.testhtm.com'
     // stage
     //    let api_key = '2f8b68615115cc3ebdb59464623533c5';
     // let api_secret = 'cf425f2343f98a7369f97804488e8ffd';
     // let basehost = 'https://stageapi.testhtm.com';
   
-    if(window.location.host == 'hireez.com'){
+    if(window.location.host == 'hireez.com' || window.location.host == 'toolkit.hireez.com'){
       api_key = '58394f1d06702804b69203c46ca1e8b1';
       api_secret = 'b979c3878f9bbefad7612dde699dca20';
-      basehost = 'https://api.hiretual.com';
+      basehost = 'https://api.hireez.com';
+    }
+    else if(window.location.host == 'staging-rebrand.kinsta.cloud' || window.location.host == 'toolkit.test2.hireez.info' ){
+      api_key = '2f1d4a75319950bcccf921e46e8fd71bb1d9459b';
+      api_secret = 'b4e868af88324510c722714d5f216bb531b70411';
+      basehost = 'https://api.testhtm.com'
     }
  
     const timestamp = new Date().toISOString();
 
     const signature = md5(`${api_secret}+api_key=${api_key}&timestamp=${timestamp}+${api_secret}`);
 
-    let url =  `/website/autocompletes/${type}`;
+    let url =  `/api/autocompletes/${type}`;
+    // let url =  `/website/autocompletes/${type}`;
+
+    const headers = {
+      'Content-Type': 'application/json',
+      'x-api-key': api_key,
+      'timestamp': new Date().getTime(),
+      get signature() {
+          const requestObject = {
+              api_key: api_key,
+              timestamp: this.timestamp,
+              url,
+              body: JSON.stringify(create_postdata(type,skillstype) || {}),
+          };
+          const text = `${api_secret}+${JSON.stringify(requestObject)}+${api_secret}`;
+          console.debug(text);
+          return md5(text).toString();
+      },
+  };
 
     axios({
       method: 'post',
+      // url: `${url}`,
       url: `${basehost}${url}`,
       data: create_postdata(type,skillstype),
-      headers: {
-        "api-key":api_key,
-        timestamp,
-        signature
-      }
+      headers
+      // headers: {
+      //   "api-key":api_key,
+      //   timestamp,
+      //   signature
+      // }
 
     })
       .then(function (e) {
@@ -143,8 +192,24 @@ function Boolean() {
         let data = analyseData(e.data, type,skillstype);
         callback(data);
       })
-      .catch(function (error) {
-        error.response && apierr(error.response.status);
+      .catch(function (err) {
+        var e = {
+          "data": [
+              "js",
+              "js developer"
+          ]
+      };
+        if(Object.keys(e.data || {}).length == 0){
+          apierr();
+          return;
+        }
+        let data = analyseData(e, type,skillstype);
+        console.log(e.data, type,skillstype);
+        
+        callback(data);
+        return
+
+        err.response && apierr(err.response.status);
        
       });
   }
@@ -313,10 +378,11 @@ function Boolean() {
 
     // Synchronize the value and lable arrays
     analyseData(e, 'valTolable');
-
     public_data.current.valuearr[public_data.current.skillstype] = e;
 
     public_data.current['set' + public_data.current.skillstype + 'val'](e);
+  
+    deduplicationfn(d.option);//去重
 
     splice_booleanstr();
     if (public_data.current.skillstype == 'location') {
@@ -328,8 +394,61 @@ function Boolean() {
      
     }
   }
-  const skillnot_handleChange = () =>{
+  const deduplicationfn = (d) =>{
+    if(!d || !d.name) return;
+    var current_inp = d.name;
+    var addlabel = d.value;
+  
+    var label_arr = { };
+
+    switch (current_inp) {
+      case 'job':
+        label_arr = {
+          'skill_not': skill_notval
+        };
+        break;
+      case 'skill_and':
+        label_arr = {
+          'skill_or': skill_orval,
+          'skill_not': skill_notval
+        };
+        break;
+      case 'skill_or':
+        label_arr = {
+          'skill_and': skill_andval,
+          'skill_not': skill_notval
+        };
+        break;
+      case 'skill_not':
+        label_arr = {
+          'job': jobval,
+          'skill_and': skill_andval,
+          'skill_or': skill_orval,
+        };
+        break;
+
+    };
+
+    for(var key in label_arr){
     
+        for(var i=0;i<label_arr[key].length;i++){
+          if(label_arr[key][i].value == addlabel){
+            var ind = i;
+            label_arr[key].splice(ind, 1);
+             // Synchronize the value and lable arrays
+             const arr = label_arr[key].map((item) => {
+              return item.value;
+            });
+            public_data.current.lablearr[key] = arr;
+            public_data.current['set' + key + 'val'](label_arr[key]);
+          }
+         
+        }
+    }
+
+  }
+  const skillnot_handleChange = () =>{
+   
     ajax_fn('', setskillnotrecommdata, 'predictTitleSkill','skill_not');
   }
   const choosesystemkeyword = (e) => {
@@ -344,17 +463,18 @@ function Boolean() {
       let value = analyseData(public_data.current.lablearr, 'lableToval')[public_data.current.skillstype];
 
       public_data.current['set' + public_data.current.skillstype + 'val'](value);
+      deduplicationfn({label: val,name: public_data.current.skillstype,value: val}); //去重
       splice_booleanstr();
       skillnot_handleChange();
+      
       ajax_fn('', setrecommdata, 'predictTitleSkill');
   }
   const inputfocus = (e) => {
     public_data.current.skillstype = e.target.id;
-   
-
   }
   const copytext = (pop) => {
     copy(public_data.current.booleanstr);
+    successTipFn('Copied Successfully')
     if(pop != 'notpop') setModal(true);
   }
   const splice_booleanstr = () => {
@@ -446,7 +566,7 @@ function Boolean() {
   const apierr = (status) => {
     let tipstr = <div>Something wrong happened,<br/> please try again.</div>;
     if(status == '429'){
-      tipstr = <div> <strong>Opps!</strong><br /> You’ve exceeded your daily limit to generate boolean.</div>
+      tipstr = <div> <strong>Opps!</strong><br /> You’ve exceeded your per-minute limit to generate boolean.</div>
     }
 
     if(!errtip.visible){
@@ -462,168 +582,216 @@ function Boolean() {
     seterrtip({text:'',visible:false});
     public_data.current.errT && clearTimeout(public_data.current.errT);
   }
+
+
   return (
     <div>
       <div className="boolean_part">
         <div className="main">
           <div className="toptitle">
-            <img src="https://hireez.com/wp-content/uploads/2021/12/Active.png" alt="Boolean icon"
-              className="icon" />
             <h1 className="ph1">
               hireEZ Boolean Builder
             </h1>
             <span className="strlen"></span>
           </div>
           <div className="formbox">
-            {/* job form */}
-            <div className="job_box outbox">
-              
-              <p className="title_p1">Job Titles</p>
-              <div className="titlebox">
-                <p className="title_p2"> OR <span className="grayT">(At least include one of them)</span> </p>
-                <Restbutton category="HireEZ Boolean Builder" control="skill" onClick={rest} />
-                <Waringtext visible={(waring == 'job')} />
-              </div>
-              <AsyncSelect
-                className="inputbox"
-                inputId='job'
-                arialabel='Job Titles'
-                value={jobval}
-                onChange={handleChange}
-                onFocus={inputfocus}
-                onInputChange={inputchange}
-                hideSelectedOptions={true}
-                isMulti={true}
-                cacheOptions
-                placeholder='e.g. developer, software engineer, programmer'
-                noOptionsMessage={() => "Type to search"}
-                loadingMessage={() => <div className="loadingtext">Loading...</div>}
-                loadOptions={loadOptions}
-              />
-              {
-                (recommdata.job.length > 0) && <div className="data_box">
-                  <Recommendlab onClick={choosesystemkeyword} recommdata={recommdata} type="job" />
-                </div>
-              }
-            </div>
 
-            {/* skill and form */}
-            <div className="mandatory_box outbox">
+            <div className='bgBox'>
+              {/* job form */}
+              <div className="job_box outbox">
+                
+                <p className="title_p1">Job Titles</p>
+                <div className='bgBox2'>
+                  <div className="titlebox">
+                    <p className="title_p2"> OR <span className="grayT">(At least include one of them)</span> </p>
+                    <Restbutton category="HireEZ Boolean Builder" control="skill" onClick={rest} />
+                    <Waringtext visible={(waring == 'job')} />
+                  </div>
+                  <label className='wcag-label' for="job">e.g. developer, software engineer, programmer</label>
+                  <AsyncSelect
+                    className="inputbox"
+                    inputId='job'
+
+                    arialabel='Job Titles'
+                    value={jobval}
+                    onChange={handleChange}
+                    onFocus={inputfocus}
+                    onInputChange={inputchange}
+                    hideSelectedOptions={true}
+                    isMulti={true}
+                    cacheOptions
+                    placeholder='e.g. developer, software engineer, programmer'
+                    noOptionsMessage={searchTip}
+                    loadingMessage={LoadingEle}
+                    loadOptions={loadOptions}
+                    styles={selectStyle}
+                    components={AsyncSelectComponents}
+                    menuIsOpen={true}
+                  />
+                  {
+                    (recommdata.job.length > 0) && <div className="data_box">
+                      <Recommendlab onClick={choosesystemkeyword} recommdata={recommdata} type="job" />
+                    </div>
+                  }
+                </div>
+              </div>
+            </div>
+            <div className='bgBox'>
             <p className="title_p1">Skills</p>
-           
-            <div className="titlebox">
-              <p className="title_p2">AND <span className="grayT">(Include all of them)</span> </p>
-                <Waringtext visible={(waring == 'skill_and')} />
-            </div>
-              <AsyncSelect
-                className="inputbox"
-                inputId='skill_and'
-                arialabel='skill_and'
-                value={skill_andval}
-                onChange={handleChange}
-                onFocus={inputfocus}
-                onInputChange={inputchange}
-                hideSelectedOptions={true}
-                isMulti={true}
-                cacheOptions
-                placeholder='Enter AND keywords'
-                loadingMessage={() => <div className="loadingtext">Loading...</div>}
-                noOptionsMessage={() => 'Type to search'}
-                loadOptions={loadOptions}
-              />
-              {
-                (recommdata.skill_and.length > 0) && <div className="data_box">
-                  <Recommendlab onClick={choosesystemkeyword} recommdata={recommdata} type="skill_and" />
-                </div>
-              }
-            </div>
+              <div className='bgBox2'>
+                  
+                  {/* skill and form */}
+                  <div className="mandatory_box outbox">
 
-            {/* skill or form */}
-            <div className="preferred_box outbox">
-           
-            <div className="titlebox">
-            <p className="title_p2">OR <span className="grayT">(At least include one of them)</span> </p>
-                <Waringtext visible={(waring == 'skill_or')} />
-            </div>
-              <AsyncSelect
-                className="inputbox"
-                inputId='skill_or'
-                arialabel='skill_or '
-                value={skill_orval}
-                onChange={handleChange}
-                onFocus={inputfocus}
-                onInputChange={inputchange}
-                hideSelectedOptions={true}
-                isMulti={true}
-                cacheOptions
-                placeholder='Enter OR keywords'
-                loadingMessage={() => <div className="loadingtext">Loading...</div>}
-                noOptionsMessage={() => 'Type to search'}
-                loadOptions={loadOptions}
-              />
-              {
-                (recommdata.skill_or.length > 0) && <div className="data_box">
-                  <Recommendlab onClick={choosesystemkeyword} recommdata={recommdata} type="skill_or" />
-                </div>
-              }
-            </div>
+                    <div className="titlebox">
+                      <p className="title_p2">AND <span className="grayT">(Include all of them)</span> </p>
+                      <Waringtext visible={(waring == 'skill_and')} />
+                    </div>
+                    <label className='wcag-label' for="skill_and">Enter AND keywords</label>
+                    <AsyncSelect
+                      className="inputbox"
+                      inputId='skill_and'
+                      arialabel='skill_and'
+                      value={skill_andval}
+                      onChange={handleChange}
+                      onFocus={inputfocus}
+                      onInputChange={inputchange}
+                      hideSelectedOptions={true}
+                      isMulti={true}
+                      cacheOptions
+                      placeholder='Enter AND keywords'
+                      loadingMessage={LoadingEle}
+                      noOptionsMessage={searchTip}
+                      loadOptions={loadOptions}
+                      styles={{
+                        control: (baseStyles, state) => ({
+                          ...baseStyles,
+                          height:'62px',
+                        }),
+                      }}
+                    />
+                    {
+                      (recommdata.skill_and.length > 0) && <div className="data_box">
+                        <Recommendlab onClick={choosesystemkeyword} recommdata={recommdata} type="skill_and" />
+                      </div>
+                    }
+                  </div>
 
-              {/* skill not form */}
-              <div className="preferred_box outbox">
-           
-            <div className="titlebox">
-             <p className="title_p2">NOT <span className="grayT">(Exclude)</span> </p>
-                <Waringtext visible={(waring == 'skill_not')} />
-            </div>
-              <AsyncSelect
-                className="inputbox"
-                inputId='skill_not'
-                arialabel='skill_not '
-                value={skill_notval}
-                onChange={handleChange}
-                onFocus={inputfocus}
-                onInputChange={inputchange}
-                hideSelectedOptions={true}
-                isMulti={true}
-                cacheOptions
-                placeholder='Enter NOT keywords'
-                loadingMessage={() => <div className="loadingtext">Loading...</div>}
-                noOptionsMessage={() => 'Type to search'}
-                loadOptions={loadOptions}
-              />
-              {
-                (skillnotrecommdata.skill_not.length > 0) && <div className="data_box">
-                  <Recommendlab onClick={choosesystemkeyword} recommdata={skillnotrecommdata} type="skill_not" />
-                </div>
-              }
+                  {/* skill or form */}
+                  <div className="preferred_box outbox">
+
+                    <div className="titlebox">
+                      <p className="title_p2">OR <span className="grayT">(At least include one of them)</span> </p>
+                      <Waringtext visible={(waring == 'skill_or')} />
+                    </div>
+                    <label className='wcag-label' for="skill_or">Enter OR keywords</label>
+                    <AsyncSelect
+                      className="inputbox"
+                      inputId='skill_or'
+                      arialabel='skill_or '
+                      value={skill_orval}
+                      onChange={handleChange}
+                      onFocus={inputfocus}
+                      onInputChange={inputchange}
+                      hideSelectedOptions={true}
+                      isMulti={true}
+                      cacheOptions
+                      placeholder='Enter OR keywords'
+                      loadingMessage={LoadingEle}
+                      noOptionsMessage={searchTip}
+                      loadOptions={loadOptions}
+                      styles={{
+                        control: (baseStyles, state) => ({
+                          ...baseStyles,
+                          height:'62px',
+                        }),
+                      }}
+                    />
+                    {
+                      (recommdata.skill_or.length > 0) && <div className="data_box">
+                        <Recommendlab onClick={choosesystemkeyword} recommdata={recommdata} type="skill_or" />
+                      </div>
+                    }
+                  </div>
+
+                  {/* skill not form */}
+                  <div className="preferred_box outbox">
+
+                    <div className="titlebox">
+                      <p className="title_p2">NOT <span className="grayT">(Exclude)</span> </p>
+                      <Waringtext visible={(waring == 'skill_not')} />
+                    </div>
+                    <label className='wcag-label' for="skill_not">Enter NOT keywords</label>
+                    <AsyncSelect
+                      className="inputbox"
+                      inputId='skill_not'
+                      arialabel='skill_not '
+                      value={skill_notval}
+                      onChange={handleChange}
+                      onFocus={inputfocus}
+                      onInputChange={inputchange}
+                      hideSelectedOptions={true}
+                      isMulti={true}
+                      cacheOptions
+                      placeholder='Enter NOT keywords'
+                      loadingMessage={LoadingEle}
+                      noOptionsMessage={searchTip}
+                      loadOptions={loadOptions}
+                      styles={{
+                        control: (baseStyles, state) => ({
+                          ...baseStyles,
+                          height:'62px',
+                        }),
+                      }}
+                    />
+                    {
+                      (skillnotrecommdata.skill_not.length > 0) && <div className="data_box">
+                        <Recommendlab onClick={choosesystemkeyword} recommdata={skillnotrecommdata} type="skill_not" />
+                      </div>
+                    }
+                  </div>
               </div>
-
-            {/* location form */}
-            <div className="location_box outbox">
-            <p className="title_p1">Locations</p>
-           
-            <div className="titlebox">
-            <p className="title_p2">OR <span className="grayT">(At least include one of them)</span> </p>
-                <Waringtext visible={(waring == 'location')} />
             </div>
-              <AsyncSelect
-                className="inputbox"
-                inputId='location'
-                arialabel='Location'
-                value={locationval}
-                onChange={handleChange}
-                onFocus={inputfocus}
-                onInputChange={inputchange}
-                hideSelectedOptions={true}
-                isMulti={true}
-                cacheOptions
-                placeholder='Enter city, state or country'
-                loadingMessage={() => <div className="loadingtext">Loading...</div>}
-                noOptionsMessage={() => 'Type to search'}
-                loadOptions={loadOptions}
-              />
+            <div className='bgBox'>
+              <div className='bgBox2'>
+                  {/* location form */}
+                  <div className="location_box outbox">
+                    <p className="title_p1">Locations</p>
 
+                    <div className="titlebox">
+                      <p className="title_p2">OR <span className="grayT">(At least include one of them)</span> </p>
+                      <Waringtext visible={(waring == 'location')} />
+                    </div>
+                    <label className='wcag-label' for="location">Enter city, state or country</label>
+                    <AsyncSelect
+                      className="inputbox"
+                      inputId='location'
+                      arialabel='Location'
+                      value={locationval}
+                      onChange={handleChange}
+                      onFocus={inputfocus}
+                      onInputChange={inputchange}
+                      hideSelectedOptions={true}
+                      isMulti={true}
+                      cacheOptions
+                      placeholder='Enter city, state or country'
+                      loadingMessage={LoadingEle}
+                      noOptionsMessage={searchTip}
+                      loadOptions={loadOptions}
+                      styles={{
+                        control: (baseStyles, state) => ({
+                          ...baseStyles,
+                          height:'62px',
+                        }),
+                      }}
+                    />
+
+                  </div>
+                </div>
             </div>
+
+
+
             <a href="javascript:void(0)" data-vars-ga-category="HireEZ Boolean Builder" data-vars-ga-action="click_generate boolean" data-vars-ga-label={pageurl} onClick={generateboolean} className={`but ${butstate}`}>
                 Generate Boolean
             </a>
@@ -643,6 +811,9 @@ function Boolean() {
  
         <Alert className="apierrtip" color="danger" isOpen={errtip.visible} toggle={closeerrytip} fade={true}>
           <span className="icon"></span>  {errtip.text}
+        </Alert>
+        <Alert className="copytip" color="danger" isOpen={successTip.visible} toggle={closeSuccessTip} fade={true}>
+          <span className="icon"></span>  {successTip.text}
         </Alert>
         < ModalExample modal={modal} />
       </div>
