@@ -1,10 +1,6 @@
 .css-1okebmr-indicatorSeparator {
     display: none;
 }
-/* .job_box .css-1hb7zxy-IndicatorsContainer :nth-child(2),
-.job_box .css-1hb7zxy-IndicatorsContainer :nth-child(3) {
-    display: none;
-} */
 
 * {
     padding: 0;
@@ -39,6 +35,7 @@ div h6 {
     margin: 0;
 }
 
+
 @media screen and (max-width: 1150px) {
     div.et_pb_row {
         width: 100% !important;
@@ -53,26 +50,13 @@ html,
 body {
     padding: 0;
     min-width: 750px;
+    --linkHoverColor: #356EFF;
 }
 
 
 button {
     background: none;
     cursor: pointer;
-}
-
-.but {
-    display: block;
-    width: 264px;
-    height: 52px;
-    line-height: 52px;
-    background-color: #FFC021;
-    border-radius: 30px;
-    font-weight: bold;
-    font-size: 16px;
-    color: #000;
-    text-align: center;
-    margin: 0 auto;
 }
 
 
@@ -82,7 +66,7 @@ button {
     font-style: normal;
     font-size: 18px;
     text-align: center;
-    color: #356EFF;
+    color: var(--linkHoverColor);
     border: none;
     font-weight: 400;
     line-height: 27px;
@@ -110,10 +94,10 @@ button {
     text-align: center;
 }
 
-#main-content .boolean_part .main .toptitle .ph1 {
+.boolean_part .toptitle .unit-title {
     font-style: normal;
     color: #3C3C3C;
-    margin: 17px auto 37px;
+    margin: 0px auto 37px;
     font-size: 56px;
     font-weight: 600;
     line-height: 84px;
@@ -281,19 +265,6 @@ button {
     margin-right: 1px;
 }
 
-.formbox .inputbox .css-1rhbuit-multiValue .css-xb97g8 {
-    display: inline-block;
-    width: 28px;
-    height: 28px;
-    background-color: rgba(78, 141, 246, 0.2);
-    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAACvSURBVHgBhdLBDYMwDAVQ24g9WKWT9NwjG8AEXKr20l26SvZAuPWvQHITk1jiENsPghO+P15X0m1aV72M4y1RJZblOfS9vEm6SdTQh+iXQKGF0Asjm33JFqmGPUIvDB+Fzgq2GOxJftsRQo39W3OMfISQ53xLHiMXoQLmeIcFQggFIa2GaKv+n/aGYmB/MJoe8mfT5jPkjyPCXEPRwA4sLYRALr9hdld1rqEIM+v8BbLIzwAXjGqJAAAAAElFTkSuQmCC);
-    background-repeat: no-repeat;
-    background-size: 14px auto;
-    background-position: center center;
-    border-radius: 0px 5px 5px 0px;
-    cursor: pointer;
-}
-
 .formbox .inputbox .formbox .css-1s2u09g-control {
     border: none;
     font-size: 14px;
@@ -328,17 +299,17 @@ button {
     height: 28px;
     border-radius: 5px;
     font-weight: normal;
-    font-size: 14px;
+    font-size: 15px;
     line-height: 28px;
     padding: 0 8px;
     cursor: pointer;
-    color: #2764FC;
+    color: var(--linkHoverColor);;
     transition: background-color 0.1s;
     margin: 0 0 9px 0;
 }
 
 .formbox .data_box .systemkeyword_box>li:hover {
-    background: #2764FC;
+    background: var(--linkHoverColor);
     color: #FFFFFF;
 }
 
@@ -432,18 +403,31 @@ button {
 
 
 .boolean_part .but {
-    margin: 66px auto 36px;
+    margin: 66px auto 30px;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    width: 400px;
+    color: #3C4043;
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: uppercase;
+    padding: 10px 19px;
+    border: 2px solid transparent;
+    border-radius: 35px;
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
+    background-image: linear-gradient(to right, #fff, #fff), linear-gradient(90deg, #E66155, #B162D8, #588EFA, #54B6CE);
 }
 
 .boolean_part .but.disable {
     background: #797676;
     color: #ffffff;
     pointer-events: none;
-
+}
+.boolean_part .but.disable>span{
+    cursor: not-allowed;
 }
 
 .boolean_part .but .icon {
@@ -466,13 +450,17 @@ button {
     padding: 10px;
     width: 100%;
     margin: 0px;
-    font-size: 14px;
+    font-size: 18px;
     line-height: 21px;
     color: #3C3C36;
     resize: none;
     border: none;
     outline: none;
     margin: 0 0 10px 0;
+    border-color: rgb(204, 204, 204);
+    border-radius: 8px;
+    border-style: solid;
+    border-width: 1px;
 }
 
 .booleantext::selection {
@@ -494,7 +482,7 @@ button {
     font-size: 18px;
     line-height: 46px;
     text-align: center;
-    color: #2764FC;
+    color: var(--linkHoverColor);;
     border: none;
 }
 

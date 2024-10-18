@@ -44,12 +44,49 @@ function Textarea(params) {
 var selectStyle = {
     control: (baseStyles, state) => ({
       ...baseStyles,
-      height:'62px',
+      minHeight:'62px',
       borderRadius: '8px'
     }),
     option: (base) => ({
       ...base,
       height: '62px',
+      display:'flex',
+      alignItems: 'center',
+    }),
+    multiValue: (styles, { data }) => {
+        return {
+          ...styles,
+          backgroundColor: 'rgba(78, 141, 246, .2)',
+          padding:'0 10px 0 5px',
+          height: '35px',
+          display:'flex',
+          fontSize: '19px',
+          alignItems: 'center',
+          borderRadius: '3px',
+        };
+    },
+    multiValueLabel: (styles, { data }) => ({
+        ...styles,
+        color: data.color,
+    }),
+    multiValueRemove: (styles, { data }) => ({
+        ...styles,
+        color: data.color,
+        width: '25px',
+        height: '25px',
+        backgroundImage: "url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAACvSURBVHgBhdLBDYMwDAVQ24g9WKWT9NwjG8AEXKr20l26SvZAuPWvQHITk1jiENsPghO+P15X0m1aV72M4y1RJZblOfS9vEm6SdTQh+iXQKGF0Asjm33JFqmGPUIvDB+Fzgq2GOxJftsRQo39W3OMfISQ53xLHiMXoQLmeIcFQggFIa2GaKv+n/aGYmB/MJoe8mfT5jPkjyPCXEPRwA4sLYRALr9hdld1rqEIM+v8BbLIzwAXjGqJAAAAAElFTkSuQmCC)",
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: '12px auto',
+        backgroundPosition: 'center 65%',
+        borderRadius: '0px 5px 5px 0px',
+        cursor: 'pointer',
+        '>svg': {
+            opacity: 0
+        },
+        ':hover':{
+            backgroundColor:'none',
+        
+        }
     }),
   }
 var AsyncSelectComponents = {

@@ -20,8 +20,6 @@ const {
   LoadingEle,
 } = Selfmodule;
 
-var pageurl = window.location.href;
-
 function Boolean() {
   const public_data = useRef({
     skillstype: 'job',
@@ -173,8 +171,8 @@ function Boolean() {
 
     axios({
       method: 'post',
-      // url: `${url}`,
-      url: `${basehost}${url}`,
+      url: `${url}`,
+      // url: `${basehost}${url}`,
       data: create_postdata(type,skillstype),
       headers
       // headers: {
@@ -193,21 +191,22 @@ function Boolean() {
         callback(data);
       })
       .catch(function (err) {
-        var e = {
-          "data": [
-              "js",
-              "js developer"
-          ]
-      };
-        if(Object.keys(e.data || {}).length == 0){
-          apierr();
-          return;
-        }
-        let data = analyseData(e, type,skillstype);
-        console.log(e.data, type,skillstype);
+      // test use
+      //   var e = {
+      //     "data": [
+      //         "js",
+      //         "js developer",
+      //     ]
+      // };
+      //   if(Object.keys(e.data || {}).length == 0){
+      //     apierr();
+      //     return;
+      //   }
+      //   let data = analyseData(e, type,skillstype);
+      //   console.log(e.data, type,skillstype);
         
-        callback(data);
-        return
+      //   callback(data);
+      //   return
 
         err.response && apierr(err.response.status);
        
@@ -475,7 +474,7 @@ function Boolean() {
   const copytext = (pop) => {
     copy(public_data.current.booleanstr);
     successTipFn('Copied Successfully')
-    if(pop != 'notpop') setModal(true);
+    // if(pop != 'notpop') setModal(true);
   }
   const splice_booleanstr = () => {
    
@@ -589,7 +588,7 @@ function Boolean() {
       <div className="boolean_part">
         <div className="main">
           <div className="toptitle">
-            <h1 className="ph1">
+            <h1 className="unit-title">
               hireEZ Boolean Builder
             </h1>
             <span className="strlen"></span>
@@ -611,7 +610,6 @@ function Boolean() {
                   <AsyncSelect
                     className="inputbox"
                     inputId='job'
-
                     arialabel='Job Titles'
                     value={jobval}
                     onChange={handleChange}
@@ -626,10 +624,10 @@ function Boolean() {
                     loadOptions={loadOptions}
                     styles={selectStyle}
                     components={AsyncSelectComponents}
-                    menuIsOpen={true}
+                    // menuIsOpen={true}
                   />
                   {
-                    (recommdata.job.length > 0) && <div className="data_box">
+                    (recommdata.job.length > 0) && <div className="data_box"> 
                       <Recommendlab onClick={choosesystemkeyword} recommdata={recommdata} type="job" />
                     </div>
                   }
@@ -660,15 +658,12 @@ function Boolean() {
                       isMulti={true}
                       cacheOptions
                       placeholder='Enter AND keywords'
-                      loadingMessage={LoadingEle}
                       noOptionsMessage={searchTip}
+                      loadingMessage={LoadingEle}
                       loadOptions={loadOptions}
-                      styles={{
-                        control: (baseStyles, state) => ({
-                          ...baseStyles,
-                          height:'62px',
-                        }),
-                      }}
+                      styles={selectStyle}
+                      components={AsyncSelectComponents}
+                      // menuIsOpen={true}
                     />
                     {
                       (recommdata.skill_and.length > 0) && <div className="data_box">
@@ -697,15 +692,12 @@ function Boolean() {
                       isMulti={true}
                       cacheOptions
                       placeholder='Enter OR keywords'
-                      loadingMessage={LoadingEle}
                       noOptionsMessage={searchTip}
+                      loadingMessage={LoadingEle}
                       loadOptions={loadOptions}
-                      styles={{
-                        control: (baseStyles, state) => ({
-                          ...baseStyles,
-                          height:'62px',
-                        }),
-                      }}
+                      styles={selectStyle}
+                      components={AsyncSelectComponents}
+                      // menuIsOpen={true}
                     />
                     {
                       (recommdata.skill_or.length > 0) && <div className="data_box">
@@ -734,15 +726,12 @@ function Boolean() {
                       isMulti={true}
                       cacheOptions
                       placeholder='Enter NOT keywords'
-                      loadingMessage={LoadingEle}
                       noOptionsMessage={searchTip}
+                      loadingMessage={LoadingEle}
                       loadOptions={loadOptions}
-                      styles={{
-                        control: (baseStyles, state) => ({
-                          ...baseStyles,
-                          height:'62px',
-                        }),
-                      }}
+                      styles={selectStyle}
+                      components={AsyncSelectComponents}
+                      // menuIsOpen={true}
                     />
                     {
                       (skillnotrecommdata.skill_not.length > 0) && <div className="data_box">
@@ -775,15 +764,12 @@ function Boolean() {
                       isMulti={true}
                       cacheOptions
                       placeholder='Enter city, state or country'
-                      loadingMessage={LoadingEle}
                       noOptionsMessage={searchTip}
+                      loadingMessage={LoadingEle}
                       loadOptions={loadOptions}
-                      styles={{
-                        control: (baseStyles, state) => ({
-                          ...baseStyles,
-                          height:'62px',
-                        }),
-                      }}
+                      styles={selectStyle}
+                      components={AsyncSelectComponents}
+                      // menuIsOpen={true}
                     />
 
                   </div>
@@ -792,8 +778,8 @@ function Boolean() {
 
 
 
-            <a href="javascript:void(0)" data-vars-ga-category="HireEZ Boolean Builder" data-vars-ga-action="click_generate boolean" data-vars-ga-label={pageurl} onClick={generateboolean} className={`but ${butstate}`}>
-                Generate Boolean
+            <a href="javascript:void(0)"  onClick={generateboolean} className={`but ${butstate}`}>
+                <span>Generate Boolean</span>
             </a>
      
             {
