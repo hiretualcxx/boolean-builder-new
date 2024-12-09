@@ -9,6 +9,7 @@
     box-sizing: border-box;
     list-style: none;
     font-family: var(--font5);
+    -webkit-text-size-adjust: none;
 }
 .triangle {
     width: 0;
@@ -69,7 +70,7 @@ button {
     color: var(--linkHoverColor);
     border: none;
     font-weight: 400;
-    line-height: 27px;
+    line-height: 1.5;
 }
 
 .iconbg {
@@ -91,16 +92,6 @@ button {
 }
 
 .boolean_part .main .toptitle {
-    text-align: center;
-}
-
-.boolean_part .toptitle .unit-title {
-    font-style: normal;
-    color: #3C3C3C;
-    margin: 0px auto 37px;
-    font-size: 56px;
-    font-weight: 600;
-    line-height: 84px;
     text-align: center;
 }
 
@@ -126,7 +117,7 @@ button {
 #main-content .formbox .title_p1 {
     font-weight: 600;
     font-size: 22px;
-    line-height: 33px;
+    line-height: 1.5;
     text-align: left;
     color: #323232;
     margin: 0 0 28px 0;
@@ -142,7 +133,7 @@ button {
     font-weight: 600;
     margin: 6px 0 10px;
     font-size: 22px;
-    line-height: 33px;
+    line-height: 1.5;
     text-align: left;
 }
 #main-content .formbox .title_p2 span{
@@ -153,7 +144,7 @@ button {
 .formbox .errtip {
     color: #E85741;
     font-size: 14px;
-    line-height: 36px;
+    line-height: 2.57;
     text-align: left;
 }
 
@@ -166,7 +157,7 @@ button {
 .waring {
     position: absolute;
     font-size: 16px;
-    line-height: 46px;
+    line-height: 2.87;
     text-align: center;
     color: #EB5757;
     right: 0;
@@ -198,7 +189,7 @@ button {
     color: #AFAFAF;
     font-size: 18px;
     font-weight: 400;
-    line-height: 27px;
+    line-height: 1.5;
     text-align: left;
 
 }
@@ -221,7 +212,7 @@ button {
     border: none;
     outline: none;
     font-size: 14px;
-    line-height: 28px;
+    line-height: 2;
     color: #000000;
     height: 28px;
     padding: 0;
@@ -229,13 +220,13 @@ button {
 
 .strlen {
     font-size: 14px;
-    line-height: 28px;
+    line-height: 2;
     display: none;
 }
 
 .formbox .inputbox .oinput::placeholder {
     font-size: 14px;
-    line-height: 28;
+    line-height: 2;
     color: #3C3C36;
 }
 
@@ -257,7 +248,7 @@ button {
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
-    line-height: 28px;
+    line-height: 2;
     height: 28px;
     color: #2F2F30;
     background: rgba(78, 141, 246, 0.2);
@@ -268,7 +259,7 @@ button {
 .formbox .inputbox .formbox .css-1s2u09g-control {
     border: none;
     font-size: 14px;
-    line-height: 46px;
+    line-height: 3.28;
     color: #8F9397;
 }
 
@@ -300,7 +291,7 @@ button {
     border-radius: 5px;
     font-weight: normal;
     font-size: 15px;
-    line-height: 28px;
+    line-height: 1.86;
     padding: 0 8px;
     cursor: pointer;
     color: var(--linkHoverColor);;
@@ -348,7 +339,7 @@ button {
 .formbox .css-26l3qy-menu {
     font-weight: normal;
     font-size: 14px;
-    line-height: 40px;
+    line-height: 2.85;
     color: #000000;
     text-align: left;
     box-shadow: none;
@@ -451,7 +442,7 @@ button {
     width: 100%;
     margin: 0px;
     font-size: 18px;
-    line-height: 21px;
+    line-height: 1.17;
     color: #3C3C36;
     resize: none;
     border: none;
