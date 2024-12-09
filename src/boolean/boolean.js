@@ -588,9 +588,6 @@ function Boolean() {
       <div className="boolean_part">
         <div className="main">
           <div className="toptitle">
-            <h1 className="unit-title">
-              hireEZ Boolean Builder
-            </h1>
             <span className="strlen"></span>
           </div>
           <div className="formbox">
